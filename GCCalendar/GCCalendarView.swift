@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: Enumerables
 
-/// The display mode when displaying a calendar.
+/// The GCCalendarDisplayMode enum defines the layout options for a GCCalendarView object.
 
 public enum GCCalendarDisplayMode {
     
@@ -33,11 +33,11 @@ public final class GCCalendarView: UIView {
     fileprivate var configuration: GCCalendarConfiguration!
     
     fileprivate var selectedDate = Date()
-    fileprivate var selectedDayView: GCCalendarDayView? = nil
+    fileprivate var selectedDayView: GCCalendarDayView?
     
     fileprivate var headerView = UIStackView()
-    fileprivate var weekViews: [GCCalendarWeekView] = []
-    fileprivate var monthViews: [GCCalendarMonthView] = []
+    fileprivate var weekViews = [GCCalendarWeekView]()
+    fileprivate var monthViews = [GCCalendarMonthView]()
     
     fileprivate var panGestureStartLocation: CGFloat!
     
