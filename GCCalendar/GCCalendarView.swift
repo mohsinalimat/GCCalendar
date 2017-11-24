@@ -7,22 +7,7 @@
 
 import UIKit
 
-// MARK: Enumerables
-
-/// The GCCalendarDisplayMode enum defines the layout options for a GCCalendarView object.
-
-public enum GCCalendarDisplayMode {
-    
-    /// The calendar is displayed one week at a time.
-    
-    case week
-    
-    /// The calendar is displayed one month at a time.
-    
-    case month
-}
-
-// MARK: - Properties & Initializers
+// MARK: Properties & Initializers
 
 /// The GCCalendarView class defines a view containing an interactive calendar.
 
@@ -76,13 +61,6 @@ public final class GCCalendarView: UIView {
     
     // MARK: Initializers
     
-    public required init?(coder aDecoder: NSCoder) {
-        
-        super.init(coder: aDecoder)
-        
-        self.clipsToBounds = true
-    }
-    
     /// Initializes and returns a newly allocated calendar view object with the specified frame rectangle.
     ///
     /// - Parameter frame: The frame rectangle for the calendar view, measured in points. The origin of the frame is relative to the superview in which you plan to add it. This method uses the frame rectangle to set the center and bounds properties accordingly.
@@ -103,7 +81,14 @@ public final class GCCalendarView: UIView {
     
     public convenience init() {
         
-        self.init(frame: CGRect.zero)
+        self.init(frame: .zero)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+        
+        self.clipsToBounds = true
     }
 }
 
@@ -251,7 +236,7 @@ fileprivate extension GCCalendarView {
 
 // MARK: - Week & Month Views
 
-internal extension GCCalendarView {
+extension GCCalendarView {
     
     fileprivate var previousViewDisabled: Bool {
         
@@ -310,7 +295,7 @@ internal extension GCCalendarView {
     
     // MARK: Toggle Views
     
-    @objc internal func toggleCurrentView(_ pan: UIPanGestureRecognizer) {
+    @objc func toggleCurrentView(_ pan: UIPanGestureRecognizer) {
         
         switch pan.state {
             

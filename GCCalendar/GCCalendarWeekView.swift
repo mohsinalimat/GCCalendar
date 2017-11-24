@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: Properties & Initializers
 
-internal final class GCCalendarWeekView: UIStackView {
+class GCCalendarWeekView: UIStackView {
     
     // MARK: Properties
     
@@ -21,7 +21,7 @@ internal final class GCCalendarWeekView: UIStackView {
         return self.arrangedSubviews as! [GCCalendarDayView]
     }
     
-    internal var dates: [Date?] = [] {
+    var dates: [Date?] = [] {
         
         didSet {
             
@@ -29,7 +29,7 @@ internal final class GCCalendarWeekView: UIStackView {
         }
     }
     
-    internal var containsToday: Bool {
+    var containsToday: Bool {
         
         return self.dates.contains(where: { possibleDate in
             
@@ -41,19 +41,19 @@ internal final class GCCalendarWeekView: UIStackView {
     
     // MARK: Initializers
     
-    required internal init(coder: NSCoder) {
+    init(configuration: GCCalendarConfiguration) {
         
-        super.init(coder: coder)
-    }
-    
-    internal init(configuration: GCCalendarConfiguration) {
-        
-        super.init(frame: CGRect.zero)
+        super.init(frame: .zero)
         
         self.configuration = configuration
         
         self.axis = .horizontal
         self.distribution = .fillEqually
+    }
+    
+    required init(coder: NSCoder) {
+        
+        super.init(coder: coder)
     }
 }
 
@@ -84,9 +84,9 @@ fileprivate extension GCCalendarWeekView {
 
 // MARK: - Pan Gesture Recognizer
 
-internal extension GCCalendarWeekView {
+extension GCCalendarWeekView {
     
-    internal func addPanGestureRecognizer(target: Any?, action: Selector?) {
+    func addPanGestureRecognizer(target: Any?, action: Selector?) {
         
         self.panGestureRecognizer = UIPanGestureRecognizer(target: target, action: action)
         
@@ -96,9 +96,9 @@ internal extension GCCalendarWeekView {
 
 // MARK: - Selected Date
 
-internal extension GCCalendarWeekView {
+extension GCCalendarWeekView {
     
-    internal func setSelectedDate(_ date: Date? = nil) {
+    func setSelectedDate(_ date: Date? = nil) {
         
         if let newDate = date {
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E274EFBF1FC801B0007DF9E6 /* GCCalendarDisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274EFBE1FC801B0007DF9E6 /* GCCalendarDisplayMode.swift */; };
 		E29559B31CA0CC5A00A5F429 /* GCCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EF54D51C5AA64800E93F85 /* GCCalendar.framework */; };
 		E2B926991C5EBB88009B1AC9 /* GCCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = E2B9268F1C5EBB88009B1AC9 /* GCCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2B9269A1C5EBB88009B1AC9 /* GCCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B926901C5EBB88009B1AC9 /* GCCalendarDayView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E274EFBE1FC801B0007DF9E6 /* GCCalendarDisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCCalendarDisplayMode.swift; sourceTree = "<group>"; };
 		E29559AE1CA0CC5A00A5F429 /* GCCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B9268F1C5EBB88009B1AC9 /* GCCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCalendar.h; sourceTree = "<group>"; };
 		E2B926901C5EBB88009B1AC9 /* GCCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCCalendarDayView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				E2B9268F1C5EBB88009B1AC9 /* GCCalendar.h */,
 				E2CC200E1E6E257A00FA2F32 /* GCCalendarConfiguration.swift */,
 				E2B926901C5EBB88009B1AC9 /* GCCalendarDayView.swift */,
+				E274EFBE1FC801B0007DF9E6 /* GCCalendarDisplayMode.swift */,
 				E2B926921C5EBB88009B1AC9 /* GCCalendarMonthView.swift */,
 				E2B926931C5EBB88009B1AC9 /* GCCalendarView.swift */,
 				E2CC20141E6E501F00FA2F32 /* GCCalendarViewDelegate.swift */,
@@ -215,6 +218,7 @@
 				E2CC200F1E6E257A00FA2F32 /* GCCalendarConfiguration.swift in Sources */,
 				E2B9269A1C5EBB88009B1AC9 /* GCCalendarDayView.swift in Sources */,
 				E2B9269F1C5EBB88009B1AC9 /* GCCalendarWeekView.swift in Sources */,
+				E274EFBF1FC801B0007DF9E6 /* GCCalendarDisplayMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

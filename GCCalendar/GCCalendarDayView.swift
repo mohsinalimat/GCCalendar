@@ -7,16 +7,14 @@
 
 import UIKit
 
-// MARK: Enumerables
+// MARK: Properties & Initializers
 
-fileprivate enum GCCalendarDateType {
+final class GCCalendarDayView: UIView {
     
-    case past, current, future, none
-}
-
-// MARK: - Properties & Initializers
-
-internal final class GCCalendarDayView: UIView {
+    fileprivate enum DateType {
+        
+        case past, current, future, none
+    }
     
     // MARK: Properties
     
@@ -27,7 +25,7 @@ internal final class GCCalendarDayView: UIView {
     
     fileprivate let tapGestureRecognizer = UITapGestureRecognizer()
     
-    fileprivate var dateType: GCCalendarDateType = .none {
+    fileprivate var dateType: DateType = .none {
         
         didSet {
             
@@ -170,21 +168,21 @@ internal final class GCCalendarDayView: UIView {
     
     // MARK: Initializers
     
-    required internal init?(coder aDecoder: NSCoder) {
-        
-        return nil
-    }
-    
-    internal init(configuration: GCCalendarConfiguration) {
+    init(configuration: GCCalendarConfiguration) {
         
         self.configuration = configuration
         
-        super.init(frame: CGRect.zero)
+        super.init(frame: .zero)
         
         self.addTapGestureRecognizer()
         
         self.addButton()
         self.addConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        return nil
     }
 }
 
@@ -255,9 +253,9 @@ fileprivate extension GCCalendarDayView {
 
 // MARK: - Selection
 
-internal extension GCCalendarDayView {
+extension GCCalendarDayView {
     
-    @objc internal func highlight() {
+    @objc func highlight() {
         
         if !(self.dateType == .past && !self.configuration.pastDatesEnabled) {
             
@@ -273,7 +271,7 @@ internal extension GCCalendarDayView {
         }
     }
     
-    internal func unhighlight() {
+    func unhighlight() {
         
         self.button.backgroundColor = nil
         

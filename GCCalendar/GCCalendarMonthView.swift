@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: Properties & Initializers
 
-internal final class GCCalendarMonthView: UIStackView {
+class GCCalendarMonthView: UIStackView {
     
     // MARK: Properties
     
@@ -49,7 +49,7 @@ internal final class GCCalendarMonthView: UIStackView {
         return newDates
     }
     
-    internal var startDate: Date! {
+    var startDate: Date! {
         
         didSet {
             
@@ -57,34 +57,34 @@ internal final class GCCalendarMonthView: UIStackView {
         }
     }
     
-    internal var containsToday: Bool {
+    var containsToday: Bool {
         
         return self.configuration.calendar.isDate(self.startDate, equalTo: Date(), toGranularity: .month)
     }
     
     // MARK: Initializers
     
-    required init(coder: NSCoder) {
+    init(configuration: GCCalendarConfiguration) {
         
-        super.init(coder: coder)
-    }
-    
-    internal init(configuration: GCCalendarConfiguration) {
-        
-        super.init(frame: CGRect.zero)
+        super.init(frame: .zero)
         
         self.configuration = configuration
         
         self.axis = .vertical
         self.distribution = .fillEqually
     }
+    
+    required init(coder: NSCoder) {
+        
+        super.init(coder: coder)
+    }
 }
 
 // MARK: - Pan Gesture Recognizer
 
-internal extension GCCalendarMonthView {
+extension GCCalendarMonthView {
     
-    internal func addPanGestureRecognizer(target: Any?, action: Selector?) {
+    func addPanGestureRecognizer(target: Any?, action: Selector?) {
         
         self.panGestureRecognizer = UIPanGestureRecognizer(target: target, action: action)
         
@@ -119,9 +119,9 @@ fileprivate extension GCCalendarMonthView {
 
 // MARK: - Selected Date
 
-internal extension GCCalendarMonthView {
+extension GCCalendarMonthView {
     
-    internal func setSelectedDate(_ date: Date? = nil) {
+    func setSelectedDate(_ date: Date? = nil) {
         
         let newDate: Date = date ?? self.startDate
         var weekOfMonth = self.configuration.calendar.ordinality(of: .weekOfMonth, in: .month, for: newDate)!

@@ -11,7 +11,7 @@ import UIKit
 
 /// The delegate of a GCCalendarView object must adopt the GCCalendarViewDelegate protocol. The protocol's optional methods allow the delegate to handle date selection and customize the calendar view's appearance.
 
-public protocol GCCalendarViewDelegate: class {
+public protocol GCCalendarViewDelegate: AnyObject {
     
     // MARK: Date Selection
     
