@@ -122,30 +122,30 @@ fileprivate extension GCCalendarView {
         
         self.configuration = GCCalendarConfiguration()
         
-        self.configuration.calendar = self.delegate.calendar(calendarView: self)
+        self.configuration.calendar = self.delegate.calendar(for: self)
         
-        self.configuration.weekdayLabelFont = self.delegate.weekdayLabelFont(calendarView: self)
-        self.configuration.weekdayLabelTextColor = self.delegate.weekdayLabelTextColor(calendarView: self)
+        self.configuration.weekdayLabelFont = self.delegate.weekdayLabelFont(for: self)
+        self.configuration.weekdayLabelTextColor = self.delegate.weekdayLabelTextColor(for: self)
         
-        self.configuration.pastDatesEnabled = self.delegate.pastDatesEnabled(calendarView: self)
-        self.configuration.pastDateFont = self.delegate.pastDateFont(calendarView: self)
-        self.configuration.pastDateEnabledTextColor = self.delegate.pastDateEnabledTextColor(calendarView: self)
-        self.configuration.pastDateDisabledTextColor = self.delegate.pastDateDisabledTextColor(calendarView: self)
-        self.configuration.pastDateSelectedFont = self.delegate.pastDateSelectedFont(calendarView: self)
-        self.configuration.pastDateSelectedTextColor = self.delegate.pastDateSelectedTextColor(calendarView: self)
-        self.configuration.pastDateSelectedBackgroundColor = self.delegate.pastDateSelectedBackgroundColor(calendarView: self)
+        self.configuration.pastDatesEnabled = self.delegate.pastDatesEnabled(for: self)
+        self.configuration.pastDateFont = self.delegate.pastDateFont(for: self)
+        self.configuration.pastDateEnabledTextColor = self.delegate.pastDateEnabledTextColor(for: self)
+        self.configuration.pastDateDisabledTextColor = self.delegate.pastDateDisabledTextColor(for: self)
+        self.configuration.pastDateSelectedFont = self.delegate.pastDateSelectedFont(for: self)
+        self.configuration.pastDateSelectedTextColor = self.delegate.pastDateSelectedTextColor(for: self)
+        self.configuration.pastDateSelectedBackgroundColor = self.delegate.pastDateSelectedBackgroundColor(for: self)
         
-        self.configuration.currentDateFont = self.delegate.currentDateFont(calendarView: self)
-        self.configuration.currentDateTextColor = self.delegate.currentDateTextColor(calendarView: self)
-        self.configuration.currentDateSelectedFont = self.delegate.currentDateSelectedFont(calendarView: self)
-        self.configuration.currentDateSelectedTextColor = self.delegate.currentDateSelectedTextColor(calendarView: self)
-        self.configuration.currentDateSelectedBackgroundColor = self.delegate.currentDateSelectedBackgroundColor(calendarView: self)
+        self.configuration.currentDateFont = self.delegate.currentDateFont(for: self)
+        self.configuration.currentDateTextColor = self.delegate.currentDateTextColor(for: self)
+        self.configuration.currentDateSelectedFont = self.delegate.currentDateSelectedFont(for: self)
+        self.configuration.currentDateSelectedTextColor = self.delegate.currentDateSelectedTextColor(for: self)
+        self.configuration.currentDateSelectedBackgroundColor = self.delegate.currentDateSelectedBackgroundColor(for: self)
         
-        self.configuration.futureDateFont = self.delegate.futureDateFont(calendarView: self)
-        self.configuration.futureDateTextColor = self.delegate.futureDateTextColor(calendarView: self)
-        self.configuration.futureDateSelectedFont = self.delegate.futureDateSelectedFont(calendarView: self)
-        self.configuration.futureDateSelectedTextColor = self.delegate.futureDateSelectedTextColor(calendarView: self)
-        self.configuration.futureDateSelectedBackgroundColor = self.delegate.futureDateSelectedBackgroundColor(calendarView: self)
+        self.configuration.futureDateFont = self.delegate.futureDateFont(for: self)
+        self.configuration.futureDateTextColor = self.delegate.futureDateTextColor(for: self)
+        self.configuration.futureDateSelectedFont = self.delegate.futureDateSelectedFont(for: self)
+        self.configuration.futureDateSelectedTextColor = self.delegate.futureDateSelectedTextColor(for: self)
+        self.configuration.futureDateSelectedBackgroundColor = self.delegate.futureDateSelectedBackgroundColor(for: self)
         
         self.configuration.selectedDate = { return self.selectedDate }
         
