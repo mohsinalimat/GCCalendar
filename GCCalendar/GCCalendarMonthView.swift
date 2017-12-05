@@ -57,9 +57,9 @@ class GCCalendarMonthView: UIStackView {
         }
     }
     
-    var containsToday: Bool {
+    internal func contains(date: Date) -> Bool {
         
-        return self.configuration.calendar.isDate(self.startDate, equalTo: Date(), toGranularity: .month)
+        return self.configuration.calendar.isDate(self.startDate, equalTo: date, toGranularity: .month)
     }
     
     // MARK: Initializers
@@ -121,7 +121,7 @@ fileprivate extension GCCalendarMonthView {
 
 extension GCCalendarMonthView {
     
-    func setSelectedDate(_ date: Date? = nil) {
+    internal func select(date: Date? = nil) {
         
         let newDate: Date = date ?? self.startDate
         var weekOfMonth = self.configuration.calendar.ordinality(of: .weekOfMonth, in: .month, for: newDate)!
@@ -131,6 +131,6 @@ extension GCCalendarMonthView {
             weekOfMonth -= 1
         }
         
-        self.weekViews[weekOfMonth].setSelectedDate(newDate)
+        self.weekViews[weekOfMonth].select(date: newDate)
     }
 }
