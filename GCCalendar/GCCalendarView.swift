@@ -577,7 +577,7 @@ fileprivate extension GCCalendarView {
     
     fileprivate func currentWeekDates(fromDate date: Date) -> [Date?] {
         
-        var components = self.configuration.calendar.dateComponents([.weekday, .weekOfYear, .year], from: date)
+        var components = self.configuration.calendar.dateComponents([.weekOfYear, .yearForWeekOfYear], from: date)
         
         components.weekday = 1
         
